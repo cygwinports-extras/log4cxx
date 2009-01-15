@@ -1,0 +1,9 @@
+--- origsrc/apache-log4cxx-0.10.0/src/main/cpp/Makefile.am	2008-03-31 17:34:09.000000000 -0500
++++ src/apache-log4cxx-0.10.0/src/main/cpp/Makefile.am	2009-01-14 22:46:15.421500000 -0600
+@@ -169,5 +169,5 @@ liblog4cxx_la_SOURCES = \
+         zipcompressaction.cpp
+ 
+ AM_CPPFLAGS = @CPPFLAGS_ODBC@
+-liblog4cxx_la_LDFLAGS = -version-info @LT_VERSION@ @LIBS_ODBC@ -@APR_LIBS@
++liblog4cxx_la_LDFLAGS = -version-info @LT_VERSION@ -no-undefined @LIBS_ODBC@ -@APR_LIBS@
+ 
