@@ -1,7 +1,9 @@
 DESCRIPTION="Apache C++ logging framework"
 HOMEPAGE="http://logging.apache.org/log4cxx/"
 SRC_URI="mirror://apache/logging/${PN}/${PV}/apache-${P}.tar.gz"
-PATCH_URI="0.10.0-no-undefined.patch
+PATCH_URI="mirror://portage/dev-libs/${PN}/files/${PV}-missing_includes.patch
+           0.10.0-libesmtp.patch
+           0.10.0-no-undefined.patch
            0.10.0-odbc-wchar_t.patch"
 
 SRC_DIR="apache-${P}"
@@ -9,8 +11,8 @@ SRC_DIR="apache-${P}"
 PKG_NAMES="${PN} lib${PN}10 lib${PN}-devel lib${PN}-doc"
 liblog4cxx10_CONTENTS="--exclude=html usr/bin/*-10.dll usr/share/doc/"
 liblog4cxx_devel_CONTENTS="usr/include/ usr/lib/"
-liblog4cxx_doc_CONTENTS="usr/share/doc/${P}/html/"
+liblog4cxx_doc_CONTENTS="usr/share/doc/${PN}/html/"
 
 ACLOCAL_FLAGS="-I ."
 CYGCONF_ARGS="--with-ODBC=Microsoft --with-SMTP=libesmtp"
-MAKEOPTS+=" htmldest=/usr/share/doc/${P}/html"
+MAKEOPTS+=" htmldest=/usr/share/doc/${PN}/html"
