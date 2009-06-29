@@ -1,5 +1,5 @@
 category: Libs
-requires: cygwin libapr1 libaprutil1 libgcc1 libesmtp5 libstdc++6
+requires: libapr1 libaprutil1 libgcc1 libesmtp5 libstdc++6
 external-source: log4cxx
 sdesc: "Apache C++ logging framework (runtime)"
 ldesc: "Apache log4cxx is a logging framework for C++ patterned after 
