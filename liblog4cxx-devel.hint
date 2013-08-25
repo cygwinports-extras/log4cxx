@@ -1,8 +1,0 @@
-category: Libs
-requires: liblog4cxx10 libapr1-devel libaprutil1-devel libesmtp-devel libiodbc-devel libstdc++6-devel
-external-source: log4cxx
-sdesc: "Apache C++ logging framework (development)"
-ldesc: "Apache log4cxx is a logging framework for C++ patterned after 
-Apache log4j. Apache log4cxx uses Apache Portable Runtime for most 
-platform-specific code and should be usable on any platform supported by 
-APR."

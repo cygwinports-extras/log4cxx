@@ -1,0 +1,27 @@
+NAME="log4cxx"
+VERSION=0.10.0
+RELEASE=11
+CATEGORY="Libs"
+SUMMARY="Apache C++ logging framework"
+DESCRIPTION="Apache log4cxx is a logging framework for C++ patterned after
+Apache log4j. Apache log4cxx uses Apache Portable Runtime for most platform-
+specific code and should be usable on any platform supported by APR."
+HOMEPAGE="http://logging.apache.org/log4cxx/"
+SRC_URI="mirror://apache/logging/log4cxx/${VERSION}/apache-log4cxx-${VERSION}.tar.gz"
+SRC_DIR="apache-log4cxx-${VERSION}"
+
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/log4cxx.git/plain/log4cxx-cstring.patch
+	0.10.0-libesmtp.patch
+	0.10.0-no-undefined.patch
+"
+
+PKG_NAMES="lib${NAME}10 lib${NAME}-devel lib${NAME}-doc"
+liblog4cxx10_CONTENTS="--exclude=html usr/bin/*-10.dll usr/share/doc/"
+liblog4cxx_devel_CONTENTS="usr/include/ usr/lib/"
+liblog4cxx_doc_CATEGORY="Doc"
+liblog4cxx_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+ACLOCAL_FLAGS="-I ."
+CYGCONF_ARGS="--with-ODBC=iODBC --with-SMTP=libesmtp"
+MAKEOPTS+=" htmldest=/usr/share/doc/${NAME}/html"
